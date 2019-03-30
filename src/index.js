@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Avatar from './Avatar';
+import Message from './Message';
+import NameWithHandle from './NameWithHandle';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class Tweet extends React.Component{
+    render(){
+        return(
+            <div className='tweet'>
+                <Avatar/>
+                <div className="content">
+                    <NameWithHandle/>
+                    <Message/>
+                </div>
+            </div>
+        );
+    }
+} 
+ReactDOM.render(
+    <Tweet/>,
+    document.querySelector('#root'));
